@@ -35,6 +35,24 @@
 - (void)testExample {
     // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+    
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    XCUIElement *rootViewControllerButton = app.navigationBars[@"DetailView"].buttons[@"Root View Controller"];
+    [rootViewControllerButton tap];
+    [app.tables.staticTexts[@"Winter"] tap];
+    [rootViewControllerButton tap];
+    
+    //XCUIApplication *app = [[XCUIApplication alloc] init];
+    XCUIElementQuery *tablesQuery = app.tables;
+    [tablesQuery.staticTexts[@"Shoji Screen"] tap];
+    
+    //XCUIElement *rootViewControllerButton = app.navigationBars[@"DetailView"].buttons[@"Root View Controller"];
+    
+    [rootViewControllerButton tap];
+    [tablesQuery.staticTexts[@"Lago todos los santos"] tap];
+    [rootViewControllerButton tap];
+    
+    
 }
 
 @end
